@@ -4,7 +4,7 @@ int find_parent(int node,vector<int>& parent){
     return(parent[node]=find_parent(parent[node],parent));
 }
 
-
+//always find parent using find_parent function
 void make_union(int u,int v,vector<int>& sze,vector<int>&parent){
     int up1,up2;
     up1 = find_parent(u,parent);
