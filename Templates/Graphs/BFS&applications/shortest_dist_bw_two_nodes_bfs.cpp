@@ -1,5 +1,6 @@
-int shortest_path_bfs(vector<vector<int>>&graph,int s,int f){
+int shortest_path_bfs(vector<vector<int>>&graph,int s,int f,vector<int>&parent){
 	//shortest distance from source node s to destination node f
+	//parent is used for mapping the path
     if(s==f)
         return(0);
     queue<int>que;
@@ -19,10 +20,11 @@ int shortest_path_bfs(vector<vector<int>>&graph,int s,int f){
                 if(visited[friend1]==true)
                     continue;
                 else{
+                    parent[friend1] = curr;
                     if(friend1==f)
                         return(ans);
                     que.push(friend1);
-                    visited[friend1]=true;
+                    visited[friend1] = true;
                 }
             }
         }
