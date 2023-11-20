@@ -1,4 +1,6 @@
 vector<int> topo_sort(int v,map<int,vector<int>>&graph){
+      //if cycle exists, size of returned list will be smaller than num of nodes
+      //vertices from 0 to v-1
         vector<int>indeg(v,0);
         for (auto &i : graph){
             for(auto &j: i.second){
