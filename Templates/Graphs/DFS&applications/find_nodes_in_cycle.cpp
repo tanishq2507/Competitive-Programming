@@ -20,6 +20,7 @@ bool dfs_cycle_detector(int node,int par,vector<int>&temp,vector<bool>&visited,v
     return(false);
 }
 vector<int>find_nodes_in_cycle(vector<vector<int>>&graph){
+    //works only for undirected graphs.
     int n = graph.size();
     vector<bool>visited(n,false);
     vector<int>temp;
